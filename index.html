@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html> <!-- The start. BMI calculator -->
+
+    <head>
+        <title>BMI Calculator</title>
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <script src="js/javascript.js"></script>
+    </head>
+
+    <body>
+        <div class="div-main-main"> <!-- "div-main-main" contains "div-main-left" and "div-main-right". This is for CSS. -->
+            <div class="div-main-left"> <!-- "div-main-left" is positioned on the left and contains the calculator form. -->
+                <h1 id="h1-mainTitle">Kalkulator BMI</h1>
+                Kalkulator BMI (Body Mass Index)
+                <br><br>
+                <div class="div-calculator"> <!-- Div here to add background to the form. -->
+                    <form action="" id="form-calculatorInputs"> <!-- Calculator form contains the inputs that will be calculated. -->
+                        <h3>Jenis Kelamin</h3> <!-- Note: 2(or more) Radio input with the same name will only allow one to be chosen. -->
+                         <div id="div-inputRadioKelaminBox">   
+                            <input type="radio" name="inputRadio-kelamin" value="inputRadio-pria">Pria</input>
+                            <input type="radio" name="inputRadio-kelamin" value="inputRadio-wanita">Wanita</input>
+                         </div>
+                         <br>
+                        <h3>Berat Badan (kg)</h3> <!-- Number input, the calculation function in the javascript.js file will take the values and calculate them. -->
+                        <input type="number" name="inputNumber-beratBadan" id="inputNumber-beratBadan" value="Berat Badan (kg)"/>
+                        <br><br>
+                        <h3>Usia (tahun)</h3>
+                        <input type="number" name="inputNumber-usiaTahun" id="inputNumber-usiaTahun" value="Usia (tahun)"/>
+                        <br><br>
+                        <h3>Tingi badan (cm)</h3>
+                        <input type="number" name="inputNumber-tingiBadan" id="inputNumber-tingiBadan" value="Tingi badan (cm)"/>
+                        <br><br>
+                        <input onclick="BMI_calculation()" id="btn-calculateBMI" name="btn-calculateBMI" type="button" value="Hitung BMI"/> <!-- This calls the calculate function which makes the result appear -->
+                        <input name="btn-calcReset" type="reset" value="Reset" onclick="BMI_reset()"/> <!-- This calls the reset function which resets the form and removes the result texts. -->
+                    </form> <!-- If the form's formatting looks a bit odd it was because I was unfamiliar with making forms. -->
+                    <sup id="calc-emptyWarnText"></sup>
+                </div>
+            </div>
+            <div class="div-main-right"> <!-- "div-main-right" contains the calculation result number and other items. -->
+                
+                <h1>BMI anda adalah...</h1>
+                <h2 id="text-resultNumber"></h2> <!-- The number for the calculation result. -->
+                <h3 id="text-resultDesc"></h3> <!-- The description for the BMI result. -->
+                <sub id="text-resultKelamin"></sub>
+                <br><br><br>
+                
+            </div>
+        </div>
+    </body>
+
+</html> <!-- Code could've probably looked a little more cleaner but atleast it's still readable and it works. -->
+        <!-- Next time, it should look more cleaner since I understand now. -->
+
+
+<!-- << Development Log >>
+
+    [18/07/2023 20:17] Right now, the divs are not positioned side by side. div-main-left is on top while
+        div-main-right is on the bottom. I'll figure this out later. For now I'll work on the function.
+
+    [18/07/2023 21:14] The calculation function is complete. The results are pretty accurate to the
+        example calculator's results. Now I just have to add a couple more little features and decorations.
+
+    [18/07/2023 22:09] It's been going pretty well. Tweaked some of the CSS styles here and there. 
+        Still not complete though. I'm currently trying to think of the website design.
+
+    [18/07/2023 22:11] I figured it out! "display: flex; flex-direction: row;" on "div-main-main"!
+        It makes the two divs "div-main-left" and "div-main-right" positioned side-by-side!
+        As a note to future self: "div-main-main" is the container of "div-main-left" and "div-main-right.
+
+    [18/07/2023 23:31] Welp. I think that's all. The BMI calculator is functional. I think all the goal
+        and conditions are completed. This was fun. Anyways, last push to repository. See ya!
+
+    [19/07/2023 20:05] Added some more comments to explain how the code works.
+
+    [19/07/2023 20:09] Alright. That should be all of it. Actual last push to repo. See Ya!
+
+-->
+
+
+<!-- Don't mind this, just keeping this here in case I need it.
+
+    Berat badan ideal adalah impian semua orang.
+    Tidak hanya memiliki bentuk tubuh yang menunjang <br> 
+    penampilan, berat badan ideal juga menandakan kondisi 
+    tubuh yang sehat. Bagaimana dengangmu? <br>
+    Yuk, hitung sekarang di kalkulator BMI.
+
+    <div class="div-sub-extra">
+                    <button id="btn-imgBMIinfo" onclick="img_toggle('img-BMI_info')">Lihat rumus menghitung BMI</button>
+                    <img hidden="hidden" id="img-BMI_info" src="https://ukurandansatuan.com/wp-content/uploads/2016/07/uds-rumus-menghitung-BMI-400p.jpg"/>
+                </div>
+
+-->
